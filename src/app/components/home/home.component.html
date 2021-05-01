@@ -1,0 +1,10 @@
+<div class="container animated fadeIn fast">
+  <div class="row">
+    <app-card-noticias  class="col-md-4"
+      [noticias]="noticias"
+      [index]="i"
+      *ngFor="let noticias of dataNoticias; let i = index"
+    ></app-card-noticias>
+      
+</div>
+</div>

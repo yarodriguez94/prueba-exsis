@@ -1,0 +1,44 @@
+<div class="container-form mx-auto">
+    <h1>Registre su Petición</h1>
+    <hr/>
+    <form class="col-md-4 border" [formGroup]="form" (ngSubmit)="guardar()"  style="padding:1rem;">
+        <div class="form-group" > 
+            <label for="full_name_id" class="control-label">Nombre</label>
+            <input type="text" class="form-control" formControlName="name" [class.is-invalid]="nameInvalid" name="name" placeholder="Ingrese su nombre">
+            <small class="text-danger" *ngIf="nameInvalid">Por favor ingrese su nombre.(No debe contener caracteres especiales ni números)</small> 
+        </div>
+
+        <div class="form-group">
+            <label for="street1_id" class="control-label">Apellido</label>
+            <input type="text" class="form-control" formControlName="family_name"  [class.is-invalid]="familyNameInvalid" name="family_name" placeholder="Ingrese su apellido">
+            <small class="text-danger" *ngIf="familyNameInvalid">Por favor ingrese su apellido. (No debe contener caracteres especiales ni números)</small> 
+        </div>                    
+                                
+        <div class="form-group"> 
+            <label for="street2_id" class="control-label">Email</label>
+            <input type="email" class="form-control" formControlName="email"  [class.is-invalid]="emailInvalid" name="email" placeholder="Ingrese su correo">
+            <small class="text-danger" *ngIf="emailInvalid">Por favor ingrese un email valido</small> 
+        </div>    
+
+        <div class="form-group"> 
+            <label for="city_id" class="control-label">Teléfono</label>
+            <input type="number" class="form-control" formControlName="phone" [class.is-invalid]="phoneInvalid" name="phone" placeholder="Ingrese su número de teléfono">
+            <small class="text-danger" *ngIf="phoneInvalid">Por favor ingrese un número de teléfono valido</small> 
+        </div>                                    
+                                
+        <div class="form-group"> 
+            <label for="zip_id" class="control-label">Programa de interes</label>
+            <input type="textarea" class="form-control" formControlName="program" name="program" placeholder="Ingrese su programa de interes">
+        </div>        
+
+        <div class="form-group"> 
+            <label for="zip_id" class="control-label">Comentario</label>
+            <textarea type="text" class="form-control" formControlName="comment" name="comment" placeholder="Ingrese sus comentarios"></textarea>
+        </div>        
+        
+        <div class="button-enviar"> 
+            <button type="submit" class="btn btn-primary button-enviar">Enviar</button>
+        </div>     
+        
+    </form>
+</div>
